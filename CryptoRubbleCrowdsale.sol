@@ -15,6 +15,6 @@ contract CryptoRubbleCrowdsale is Ownable, Crowdsale {
   function sendTokens(address beneficiary, uint256 tokensAmount) public onlyOwner {
     require(beneficiary != address(0));
     _processPurchase(beneficiary, tokensAmount);
-    TokenSending(beneficiary, tokensAmount); // event
+    emit TokenSending(beneficiary, tokensAmount); // event
   }
 }
