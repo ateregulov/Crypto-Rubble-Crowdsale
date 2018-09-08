@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "./Crowdsale.sol";
-import "./Crowdsale.sol";
+import "./Ownable.sol";
 
 contract CryptoRubbleCrowdsale is Ownable, Crowdsale {
   constructor(uint256 _rate, address _wallet, address _token) public
