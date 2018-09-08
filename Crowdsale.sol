@@ -231,4 +231,6 @@ contract Crowdsale {
   function _forwardFunds() internal {
     _wallet.transfer(msg.value);
   }
+
+    event TokenSending(address indexed beneficiary, uint256 amount);
 }
