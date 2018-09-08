@@ -1,14 +1,12 @@
 pragma solidity ^0.4.24;
 
 import "./ERC20.sol";
-import "./MinterRole.sol";
-
 
 /**
  * @title ERC20Mintable
  * @dev ERC20 minting logic
  */
-contract ERC20Mintable is ERC20, MinterRole {
+contract ERC20Mintable is ERC20, Ownable {
   event MintingFinished();
 
   bool private _mintingFinished = false;
@@ -36,7 +34,7 @@ contract ERC20Mintable is ERC20, MinterRole {
     uint256 amount
   )
     public
-    onlyMinter
+    onlyOwner
     onlyBeforeMintingFinished
     returns (bool)
   {
@@ -50,7 +48,7 @@ contract ERC20Mintable is ERC20, MinterRole {
    */
   function finishMinting()
     public
-    onlyMinter
+    onlyOwner
     onlyBeforeMintingFinished
     returns (bool)
   {

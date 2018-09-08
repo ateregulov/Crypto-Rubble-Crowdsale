@@ -4,7 +4,7 @@ import "./Crowdsale.sol";
 import "./Ownable.sol";
 
 contract CryptoRubbleCrowdsale is Ownable, Crowdsale {
-  constructor(uint256 _rate, address _wallet, address _token) public
+  constructor(uint256 _rate, address _wallet, IERC20 _token) public
     Crowdsale(_rate, _wallet, _token) {
   }
   
