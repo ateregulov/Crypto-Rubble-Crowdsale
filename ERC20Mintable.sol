@@ -1,6 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "./ERC20.sol";
+import "./Ownable.sol";
 
 /**
  * @title ERC20Mintable
