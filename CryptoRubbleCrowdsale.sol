@@ -232,7 +232,7 @@ contract CryptoRubbleCrowdsale is Ownable {
   function _getTokenAmount(uint256 weiAmount)
     internal view returns (uint256)
   {
-    return weiAmount.mul(_rate).mul(100).div(1 ether);
+    return weiAmount.mul(_rate).div(10000000000000000);
   }
 
   /**
