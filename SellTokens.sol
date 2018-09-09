@@ -46,7 +46,7 @@ contract SellTokens is Ownable {
     if (token==0) throw;
     uint256 rate = rates[token];
     if (rate==0) throw;
-    return tokenAmount.div(rate);
+    return tokenAmount.mul(10000000000000000).div(_rate); // only for 2decimals tokens
   }
 
   function balance() constant returns (uint256) {
